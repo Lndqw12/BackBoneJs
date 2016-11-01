@@ -1,4 +1,4 @@
-var Person = Backbone.Model.extend({
+п»їvar Person = Backbone.Model.extend({
 	defaults: {
 		name1:'Name - ',
 		name:'Myrluk',
@@ -7,19 +7,22 @@ var Person = Backbone.Model.extend({
 		job1:'Job - ',
 		job:'Destroit divan',
 		color1: 'Sherstb - ',
-		color: 'Orange'
+		color: 'Potapuch'
 	}
 });
 
 var PersonView = Backbone.View.extend({
-	template: _.template('<%=name1 %><%=name %> <br><%= age1 %><%= age %> <br> <%= job1 %><%= job %> <br> <%= color1 %><%= color %>'),
-    template2: _.template('Я сказал <%= words %>, потому что мне <%= age %> лет и зовут меня <%= name %>'),
+	template: _.template('<%=name1 %><br><%= age1 %><br><%= job %><%= color %><br>'),
+    template2: _.template('РЇ СЃРєР°Р·Р°Р» <%= name %>, РїРѕС‚РѕРјСѓ С‡С‚Рѕ РјРЅРµ <%= age %> Р»РµС‚ Рё Р·РѕРІСѓС‚ РјРµРЅСЏ <%= color %>'),
 	initialize: function() {
-		tagName: '<br>',
+		tagName: '<li>',
 		this.render();
 	},
 	render: function() {
 		this.$el.html( this.template( this.model.toJSON() ) );
+			//else {
+		this.$el.html( this.template2( this.model.toJSON() ) );
+		//}
 	}
 });
 
