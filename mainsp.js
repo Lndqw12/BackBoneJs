@@ -8,16 +8,16 @@ $(function() {
 		return _.template( $('#' + id).html() );
 	};
 	App.Models.Task = Backbone.Model.extend({});
-	App.Views.Task = Backbone.View.exetend({
+	App.Views.Task = Backbone.View.extend({
 		tagName: 'li',
 		render: function () {
 			this.$el.html( this.model.get('title') );
 			return this;
 		}
 	});
-App.Collections.Task = Backbone.Collections.extend({
-	model:AppModels.Task
-})
+App.Collections.Task = Backbone.Collection.extend({
+	model:App.Models.Task
+});
 //var task = new App.Models.Task({
 	//title: '—ходить в магаз',
 	//priority: 4
@@ -25,8 +25,8 @@ App.Collections.Task = Backbone.Collections.extend({
 App.Views.Tasks = Backbone.View.extend ({
 	model: App.Models.Task
 });
-App.Views.Tasks = Backbone.Views.extend({
-	tagName: ul',
+App.Views.Tasks = Backbone.View.extend({
+	tagName: 'ul',
 	render: function function_name (argument) {
 			this.collection.each(this.addOne, this);
 			return this;
