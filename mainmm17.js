@@ -8,20 +8,25 @@
 };
 //шаблончик
 window.template = function(id) {
-	return _.template( $('#' + id).hrml() );
+	return _.template( $('#' + id).html() );
 };
 
 App.Router = Backbone.Router.extend({
-	reuters: {
-		'' : 'index'
+	routers: {
+		''	   : 'index',
+		'read' : 'read'
 	},
 	
 	index: function() {
 		console.log('Running');
+	},
+	
+	read: function() {
+		console.log('Royt');
 	}
 });
 
 new App.Router();
-
+Backbone.history.start();
 
 })();
