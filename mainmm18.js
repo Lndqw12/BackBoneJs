@@ -15,15 +15,15 @@ window.template = function(id) {
 
 App.Router = Backbone.Router.extend({
 	routers: {
-		''	   : 'index',
-		'read' : 'read'
+		''	     : 'index',
+		'page/5' : 'page'
 	},
 	
 	index: function() {
 		console.log('Running');
 	},
 	
-	read: function() {
+	apge: function() {
 		console.log('Royt');
 	}
 });
