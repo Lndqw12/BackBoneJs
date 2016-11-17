@@ -35,7 +35,7 @@ App.Router = Backbone.Router.extend({
 	},
 	
 	default: function(other) {
-		alert('Ээээ......помоему ошибочка в коде, бро ...... Олень ты и -  ' + other);
+		alert('Ээээ......помоему ошибочка в коде, бро ' + other);
 	}
 });
 
