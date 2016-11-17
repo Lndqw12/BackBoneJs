@@ -1,4 +1,4 @@
-(function() {
+﻿(function() {
 	
 	window.App = {
 		Views: {},
@@ -7,7 +7,7 @@
 		Router: {}
 };
 
-//���������
+//Шаблончик sdgsdgs
 
 window.template = function(id) {
 	return _.template( $('#' + id).html() );
@@ -15,8 +15,10 @@ window.template = function(id) {
 
 App.Router = Backbone.Router.extend({
 	routes: {
-		''					: 'index',
-		'page/:id/*simbo'	: 'page'
+		''							: 'index',
+		'page/:id/*simbo'			: 'page',
+		'search/:query'				: 'search',
+		'*other'					: 'default'
 	},
 	
 	index: function() {
@@ -26,6 +28,14 @@ App.Router = Backbone.Router.extend({
 	page: function(id, simbo) {
 		//console.log('Royt = ' + id + ' id');
 		console.log(simbo);
+	},
+	
+	search: function(query) {
+		
+	},
+	
+	default: function(other) {
+		alert('Ээээ......помоему ошибочка в коде, бро ...... Олень ты и -  ' + other);
 	}
 });
 
