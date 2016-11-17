@@ -16,15 +16,15 @@ window.template = function(id) {
 App.Router = Backbone.Router.extend({
 	routes: {
 		''					: 'index',
-		'page/:id/sdgsdgs'	: 'page'
+		'page/:id/*sdgsdgs'	: 'page'
 	},
 	
 	index: function() {
 		console.log('Running');
 	},
 	
-	page: function() {
-		console.log('Royt cool - ' + id + '!!!');
+	page: function(id) {
+		console.log('Royt good ' + id + ' cool');
 	}
 });
 
