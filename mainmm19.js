@@ -10,12 +10,15 @@
 	var vent = _.extend({}, Backbone.Events);
 	
 	//console.log(vent);
-	App.Views.SpecialTask = Backbone.View.extend({
+	App.Views.SpecialTasks = Backbone.View.extend({
 		initialize: function () {
 			vent.on('specialTasks:show', this.show, this);
 		},
 		show:function (id) {
-			console.log('Выведем задачу с id : ' + id);
+			var specialTask = this.collection.get('id');
+			//console.log('Выведем задачу с id : ' + id);
+		var specialTaskView = new App.Views.specialTask({ model: specialTask });
+		$('body').append(specialTaskView.render().el);
 		}
 	});
 
@@ -35,7 +38,7 @@
 		}
 	});
 	
-	new App.Views.SpecialTask;
+	new App.Views.SpecialTasks({collection: someCollection});
 	
 	new App.Router;
 	Backbone.history.start();
