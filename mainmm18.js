@@ -14,17 +14,17 @@ window.template = function(id) {
 };
 
 App.Router = Backbone.Router.extend({
-	routers: {
-		''	     : 'index',
-		'page/5' : 'page'
+	routes: {
+		''					: 'index',
+		'page/:id/sdgsdgs'	: 'page'
 	},
 	
 	index: function() {
 		console.log('Running');
 	},
 	
-	apge: function() {
-		console.log('Royt');
+	page: function() {
+		console.log('Royt cool - ' + id + '!!!');
 	}
 });
 
