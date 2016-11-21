@@ -5,8 +5,8 @@ Route::get('/', function()
 	return View::make('home.index');
 })
 
-Route::get('/tasks', function()
+Route::get('/tasks/(:num)', function($id)
 {
-	return json_encode( Mission::all() );
+	return json_encode( Mission::find($id) );
 })
 ?>

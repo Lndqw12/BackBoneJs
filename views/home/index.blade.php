@@ -24,7 +24,8 @@
 					title: '',
 					id: '',
 					completed: 0
-				}
+				},
+				urlRoot: '/tasks'
 			});
 		}());
 
