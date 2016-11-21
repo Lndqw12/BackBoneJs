@@ -11,5 +11,24 @@
 	<script type="text/javascript">../underscore.js</script>
 	<script type="text/javascript">../backbone.js</script>
 
+	<script>
+		
+		(function(){
+			window.App = {
+				Models: {};
+				Views: {};
+				Collestions: {}
+			};
+			App.Model.Task = Backbone.Model.extend ({
+				defaults: {
+					title: '',
+					id: '',
+					completed: 0
+				}
+			});
+		}());
+
+	</script>
+
 </body>
 </html>
