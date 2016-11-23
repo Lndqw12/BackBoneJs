@@ -13,6 +13,12 @@ Route::get('/tasks/(:num)', function($id)
 Route::put('/tasks/(:num)', function($id) {
 	$input = Input::json();
 
-	return $input->title;
-}
+	$task = Mission::find($id);
+
+	$task->title = $input->title;
+	$task->completed = $input->completed;
+
+	$task->save();
+	
+});
 ?>
