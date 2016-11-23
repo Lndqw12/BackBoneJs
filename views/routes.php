@@ -8,5 +8,11 @@ Route::get('/', function()
 Route::get('/tasks/(:num)', function($id)
 {
 	return json_encode( Mission::find($id) );
-})
+});
+
+Route::put('/tasks/(:num)', function($id) {
+	$input = Input::json();
+
+	return $input->title;
+}
 ?>
