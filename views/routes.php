@@ -19,6 +19,11 @@ Route::put('/tasks/(:num)', function($id) {
 	$task->completed = $input->completed;
 
 	$task->save();
-	
+
 });
+
+Route::delete('/tasks/(:num)', function($id) {
+	Mission::find($id)->delete();
+});
+
 ?>
