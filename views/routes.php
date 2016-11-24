@@ -33,12 +33,13 @@ Riute::post('/tasks', function() {
 		'title' => $input->title,
 		'completed' => $input->completed
 	));
-	return $newTaskArray = array(
+	$newTaskArray = array(
 		'id' => $newTask->id,
 		'title' => $input->title,
 		'completed' => $input->completed
-		);
-	
-	});
+	);
+
+	return json_encode($newTaskArray);
+});
 
 ?>
