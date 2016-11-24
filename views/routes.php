@@ -26,4 +26,19 @@ Route::delete('/tasks/(:num)', function($id) {
 	Mission::find($id)->delete();
 });
 
+Riute::post('/tasks', function() {
+	$input = Input::json();
+
+	$newTask = Mission::create( array(
+		'title' => $input->title,
+		'completed' => $input->completed
+	));
+	return $newTaskArray = array(
+		'id' => $newTask->id,
+		'title' => $input->title,
+		'completed' => $input->completed
+		);
+	
+	});
+
 ?>
