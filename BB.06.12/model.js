@@ -10,10 +10,17 @@ $(function () {
         },
         initialize: function() {
             console.log('obj create');
+
             this.on('change', function (){
                 console.log('obj change');
-                var json  = app.myObect.toJSON();
+                var json  = app.myObect.changedAttributes();
                 console.log(json);
+            });
+        },
+
+        increaseSize: function() {
+            app.myObect.set({
+                size: this.get('size') + 100
             });
         }
     });
@@ -25,9 +32,11 @@ $(function () {
     });
 
     app.myObect.set({
-        type: "active",
+        type: "weapon",
         size: 250
     });
+
+    console.log("size: "+app.myObect.get('size') +app.myObect.get('type'));
 
     //console.log ("size: "+app.MyObject.get('size'));
 
@@ -35,4 +44,7 @@ $(function () {
     //console.log(json);
     //console.log ('size:', 'size:');
 
+    //$('#myButton').live('click', function (){
+      //  app.myObect.increaseSize();
+    //});
 });
