@@ -18,9 +18,18 @@ $(function () {
             });
         },
 
+        validate: function (attrs) {
+            if(attrs.size>100) {
+                console.log('Incorrect size');
+                return 'Incorrect size';
+            }
+        },
+
         increaseSize: function() {
             app.myObect.set({
                 size: this.get('size') + 100
+            },{
+                validate:true
             });
         }
     });
